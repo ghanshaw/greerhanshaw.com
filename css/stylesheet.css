@@ -1,0 +1,621 @@
+/***
+--------------------
+Top Level Rules
+--------------------
+***/
+
+:root {
+    font-size: 16px;
+}
+
+
+h1, h2, h3, h4, h5, h6, p {
+    font-family: 'Nunito Sans', Arial, Helvetica, sans-serif;
+    line-height: 1.7;
+    font-weight: 100;
+    margin: 30px 0px;
+    color: black;
+}
+
+
+a, button, label {
+    font-family: 'Nunito Sans', Arial, Helvetica, sans-serif;
+    color: black;
+}
+
+.btn.active.focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn:active:focus, .btn:focus {
+    outline: none;
+}
+
+html, body {
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+#myCanvas {
+    background-color: white;
+    position: fixed;
+    z-index: -1;
+}
+
+/* Button Block is styled BW in default theme stylesheet */
+button.btn-block, a.btn-block {
+    border-radius: 0;
+    background-color: black;
+    color: white;
+    border: 4px solid white;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 12px;
+    transition: background-color .2s;
+}
+
+button.btn-block.js-hover, a.btn-block.js-hover {
+    background-color: white;
+    color: black;
+    font-weight: 900;  
+} 
+
+
+/***
+--------------------
+General Section Rules
+--------------------
+***/
+
+
+.section {
+    padding: 40px 0px 100px 0px;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.section .section-heading {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.section .section-subheading {
+    font-weight: 700;
+}
+
+/***** General Section Rules - Media Queries *****/
+
+@media screen and (max-width: 786px) {
+    .section {
+        padding-top: 100px;
+    }
+}
+
+/***
+--------------------
+Side Navigation
+--------------------
+***/
+
+nav.side-nav {
+    position: fixed;
+    right: 5%;
+    top: 18%;
+    z-index: 1000;
+    display: none;
+}
+
+nav.side-nav .cube {
+    height: 70px;
+    width: 78px;
+    border: 3px solid black;
+    position: absolute;
+    box-sizing: content-box;
+    left: -3px;
+}
+
+nav.side-nav ul {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    background-color: #eee;
+    height: 400px;
+    width: 90px;
+}
+
+nav.side-nav li {
+    border-bottom : 1px solid grey;
+    margin: 0px 15px;
+}
+
+nav.side-nav li:last-child {
+    border-bottom: none;
+}
+
+
+nav.side-nav li a {
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 500;
+}
+
+nav.side-nav li a:hover {
+    color: #bbb;
+}
+
+#theme-button-side-nav {
+    width: 90px;
+    margin-top: 20px;
+    text-align: center;
+    padding: 10px 0px;
+    color: white;
+    background: linear-gradient(to left, #67B26F , #4ca2cd);
+    //background: #59aa9e;
+    border: none;
+}
+
+#theme-button-side-nav:hover {
+    color: #eee;
+}
+
+/***** Side Navigation - Media Queries *****/
+
+@media screen and (max-width: 991px) {
+    nav.side-nav {
+        visibility: hidden;
+    }
+}
+
+
+/***
+--------------------
+Section - Intro
+--------------------
+***/
+
+
+.section#section-intro {
+    height: 100%;
+    position: relative;
+    background-color: transparent;
+    min-height: 500px;
+}
+
+
+.section#section-intro .section-heading {
+    font-weight: 700;
+    font-size: 75px;
+    font-family: 'Quicksand', 'Nunito Sans', Arial, Helvetica, sans-serif;
+}
+
+
+.section#section-intro h3 {
+    font-family: 'Quicksand', 'Nunito Sans', Arial, Helvetica, sans-serif;
+}
+
+.section#section-intro .content {
+    position: fixed;
+    top: 20%;        
+}
+
+/***** Section - Intro, Down Arrow *****/
+
+.section#section-intro .down-arrow-wrapper {
+    position: fixed;
+    bottom: 15px;
+    width: 100%;
+    text-align: center;
+}
+
+.section#section-intro .down-arrow {
+    margin: 0 auto;
+    animation-name: arrow;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in;
+    width: 50px;
+    fill: black;
+}
+
+@keyframes arrow {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* Extra small devices (iPhone 5) */
+@media screen and (max-width: 480px) {
+    .section#section-intro .content {
+        top: 15%;
+    }
+    
+    .section#section-intro .content h1 {
+        font-size: 3rem;
+    }
+    
+    .section#section-intro .content h3 {
+        font-size: 1.1rem;
+    }
+    
+    .section#section-intro .down-arrow-wrapper {
+         //display: none;
+     }
+
+     /* Disable parallax effect on small screens */
+     .section#section-intro .content {
+         //position: absolute;
+     }
+     
+}
+
+@media screen and (min-width: 480px) and (max-width: 786px) {
+
+    .section#section-intro .content h1 {
+        font-size: 5rem;
+    }
+    
+    .section#section-intro .content h3 {
+        font-size: 1.5rem;
+    }
+}
+
+ @media screen and (orientation:landscape) and (max-width: 786px) {
+     
+     /* Hide down arrow in landscape view */
+     .section#section-intro .down-arrow-wrapper {
+         display: none;
+     }
+
+     /* Disable parallax effect on small screens */
+     .section#section-intro .content {
+         position: absolute;
+     }
+        
+}
+
+/* Do not display down arrow on especially short screens (iPhone 5) */
+@media screen and (max-height: 568px) {
+    .section#section-intro .down-arrow-wrapper {
+         display: none;
+     }
+}
+
+/***
+--------------------
+Section - About Me
+--------------------
+***/
+
+.section#section-about-me .profile-pic {
+    max-width: 200px;
+    margin: 0 auto;
+    border-radius: 50%;
+    border: 3px solid #666;
+}
+
+.section#section-about-me .content {
+    margin-bottom: 40px;
+}
+
+
+.section#section-about-me .details h4 {
+    margin: 0;
+}
+
+.section#section-about-me .details {
+    margin-top: 45px;
+}
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+    
+    .section#section-about-me .details {
+        text-align: center;
+    }
+    
+    .section#section-about-me .details h4 {
+        font-size: 1rem;
+    }
+    
+}
+
+/* Teeny weeny devices (iPhone 5) */
+@media screen and (max-width: 320px) {
+
+    .section#section-about-me .details {
+        text-align: center;
+    }
+    
+    .section#section-about-me .details h4 {
+        font-size: 14px;
+    }
+    
+}
+
+/***
+--------------------
+Section - Skills
+--------------------
+***/
+
+#section-skills {
+    background-color: #eee;
+}
+
+.section#section-skills .section-subheading {
+    margin-bottom: -25px;
+}
+
+/***
+--------------------
+Section - Portfolio
+--------------------
+***/
+
+.section#section-portfolio .no-top-margin {
+    margin-top: 0px;
+}
+
+.section#section-portfolio figure.portfolio-fig {
+    background-color: #eee;
+    padding: 25px;
+    position: relative;
+}
+
+.section#section-portfolio figure.portfolio-fig img {
+    width: 100%;
+    box-shadow: 8px 8px 20px #444;
+}
+
+.section#section-portfolio figcaption {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.65);
+    text-align: center;
+    top: 25px;
+    opacity: 0;
+    transition: opacity .25s;
+    z-index: 30;
+    
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: -moz-flexbox;
+    display: flex;
+    
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    justify-content: center;
+    
+    -webkit-align-content: center;
+    -ms-align-content: center;
+    -moz-align-content: center;
+    align-items: center;
+
+}
+
+.section#section-portfolio figure.portfolio-fig.js-hover figcaption {
+    opacity: 1;
+}
+
+
+.section#section-portfolio figure.portfolio-fig a.btn-block {
+    width: 40%;
+    background-color: initial;
+}
+
+.section#section-portfolio figure.portfolio-fig a.btn-block.js-hover {
+    background-color: white;
+}
+
+.section#section-portfolio .technologies-wrapper {
+    text-align: center;
+}
+
+.section#section-portfolio .technologies {
+    text-align: center;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    display: inline-block;
+    margin: auto;
+    padding: 5px 10px;
+    //margin-bottom: 20px;
+}
+
+.section#section-portfolio .technologies h6 {
+    margin: 0px;
+}
+
+/***
+--------------------
+Section - Portfolio ==> Poke-Pathfinder
+--------------------
+***/
+
+.row.poke-pathfinder div.img-wrapper {
+    position: relative;
+}
+
+.row.poke-pathfinder div.img-wrapper img.desktop {
+    position: relative;
+    z-index: 20;
+
+    animation: fade-in-out 4s linear 0s infinite alternate;
+}
+
+.row.poke-pathfinder div.img-wrapper img.mobile {
+    /* animation: fade-in-out 3s linear 0s infinite alternate; */
+    z-index: 10;
+    position: absolute;
+    top: 0;
+    box-shadow: none !important;
+}
+
+@keyframes fade-in-out {
+    0% { opacity: 1; }
+    25% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+    
+
+
+
+
+/***
+--------------------
+Section - Contact
+--------------------
+***/
+
+#section-contact {
+    background-color: black;
+    color: white;
+    padding-bottom: 50px;
+}
+
+
+.section#section-contact h1, .section#section-contact h3, .section#section-contact h4 {
+    color: white;
+}
+
+.section#section-contact ul {
+    list-style: none;
+}
+
+.section#section-contact li {
+    float: left;
+}
+
+.section#section-contact i {
+    padding: 10px;
+}
+
+.section#section-contact .btn {
+    width: 100%;
+}
+
+
+/***** Section - Contact, Form *****/
+
+.section#section-contact label {
+    font-size: 13px;
+    color: white;
+}
+
+.section#section-contact input.form-control {
+    margin-bottom: 40px;
+    background-color: initial;
+    border: none;
+    border-bottom: 4px solid white;
+    border-radius: 0;
+    color: white;
+    font-size: 22px;
+    box-shadow: none;
+    height: 50px;
+    padding: 0px;
+}
+
+.section#section-contact textarea {
+    border-radius: 0;
+    font-size: 18px;
+    color: black;
+    box-shadow: none;
+    border: none;
+    margin-top: 10px;
+}
+
+#form-response h4 {
+    font-size: 16px;
+    margin: 0;
+}
+
+#form-response.alert {
+    animation-name: fadeIn;
+    animation-duration: 1.5s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+#form-response.alert i {
+    padding-left: 0;
+    display: inline;
+}
+
+/***** Section - Contact, Media Queries *****/
+
+@media screen and (max-width: 991px) {
+    .section#section-contact .btn {
+        text-align: center;
+        margin-bottom: 25px;
+    }
+
+    .section#section-contact .contact-buttons {
+        margin-bottom: 70px
+    }
+}
+
+
+/***
+--------------------
+Footer
+--------------------
+***/
+
+
+footer {
+    padding: 80px 0px 70px 0px;
+    background-color: black;
+}
+
+
+footer h5 {
+    margin: 0;
+    color: #777;
+}
+
+/***
+--------------------
+Breakpoints Overlay (for design purposes)
+--------------------
+***/
+
+
+.breakpoints {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: 100;
+    display: none
+}
+
+.breakpoints div {
+    height: 100%;
+
+    width: 2px;
+    position: absolute;
+}
+
+.breakpoints .small {
+    left: 768px;
+    background-color: aqua;
+}
+
+.breakpoints .medium {
+    left: 992px;
+    background-color: crimson;
+}
+
+.breakpoints .large {
+    background-color: rebeccapurple;
+    left: 1200px;
+}

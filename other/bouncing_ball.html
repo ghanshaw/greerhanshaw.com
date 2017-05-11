@@ -1,0 +1,374 @@
+<html>
+
+<head>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.8.21/jquery-ui.min.js"></script>
+    <script src="js/jquery.ui.touch-punch.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/interact.js/1.2.8/interact.min.js"></script>
+    <script src='./path/to/zingtouch.min.js'></script>
+    
+    
+    
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+        }
+        #myCanvas {
+            background-color: white;
+            display: none;
+        }
+        h1 {
+            position: absolute;
+            top: 30%;
+            left: 30%;
+            font-family: 'roboto';
+            color: black;
+        }
+        #drag-1,
+        #drag-2 {
+            width: 100px;
+            height: 100px;
+            min-height: 6.5em;
+            margin: 10%;
+            background-color: #29e;
+            color: white;
+            border-radius: 0.75em;
+            padding: 4%;
+            -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+        }
+        #drag-me::before {
+            content: "#" attr(id);
+            font-weight: bold;
+        }
+        
+        #drag-1 {
+            background-color: lightcoral;
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+    <canvas id="myCanvas" width="" height=""></canvas>
+    <h1>Greer Hanshaw</h1>
+
+    <div id="drag-1" class="draggable">
+        <p> You can drag one element </p>
+    </div>
+    <div id="drag-2" class="draggable">
+        <p> with each pointer </p>
+    </div>
+
+
+</body>
+
+<script>
+    $(document).ready(function() {
+
+        $("#date").datepicker();
+
+        var BB = new BounceBalls();
+        BB.init();
+
+        // target elements with the "draggable" class
+
+        
+        // target elements with the "draggable" class
+        interact('#drag-2')
+            .draggable({
+                // enable inertial throwing
+                inertia: true,
+            
+                axis: 'x',
+            
+                // enable autoScroll
+                autoScroll: true,
+            
+                
+
+                // call this function on every dragmove event
+                onmove: function() {
+                    dragMoveListener(event);
+                    resizeMoveListener(event, document.getElementById('drag-1'));
+                },
+                // call this function on every dragend event
+                onend: function(event) {
+                    var textEl = event.target.querySelector('p');
+
+                    textEl && (textEl.textContent =
+                        'moved a distance of ' + (Math.sqrt(event.dx * event.dx +
+                            event.dy * event.dy) | 0) + 'px');
+                }
+    
+           
+        })
+        
+        
+        
+        interact('#drag-1').resizable({
+            //preserveAspectRatio: true,
+            edges: { left: true, right: true, bottom: true, top: true }
+          })
+          //.on('resizemove', resizeMoveListener(event, this));
+        
+        function resizeMoveListener(event, target) {
+            //var target = event.target,
+                x = (parseFloat(target.getAttribute('data-x')) || 0),
+                y = (parseFloat(target.getAttribute('data-y')) || 0);
+
+            // update the element's style
+            target.style.width  = event.rect.width + 'px';
+            target.style.height = event.rect.height + 'px';
+
+            // translate when resizing from top or left edges
+            x += event.deltaRect.left;
+            y += event.deltaRect.top;
+
+            target.style.webkitTransform = target.style.transform =
+                'translate(' + x + 'px,' + y + 'px)';
+
+            target.setAttribute('data-x', x);
+            target.setAttribute('data-y', y);
+            target.textContent = Math.round(event.rect.width) + '×' + Math.round(event.rect.height);
+          };
+
+        function dragMoveListener(event) {
+            var target = event.target,
+                // keep the dragged position in the data-x/data-y attributes
+                x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx,
+                y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy;
+
+            // translate the element
+            target.style.webkitTransform =
+                target.style.transform =
+                'translate(' + x + 'px, ' + y + 'px)';
+
+            // update the posiion attributes
+            target.setAttribute('data-x', x);
+            target.setAttribute('data-y', y);
+        }
+
+        // this is used later in the resizing and gesture demos
+        window.dragMoveListener = dragMoveListener;
+        
+    });
+
+    var BounceBalls = function() {
+
+        <!-- Charlenes children -->
+
+        this.canvas = $('#myCanvas');
+        this.canvasVanilla = document.getElementById("myCanvas");
+        this.context = this.canvasVanilla.getContext('2d');
+        this.width = window.innerWidth;
+        this.height = window.innerHeight;
+        this.circlesArray = [];
+        this.entered = 0; // Has the first circle entered the canvas yet?
+        this.circlesNum = 15;
+
+        this.drawings = 0;
+
+        circles = this.circlesArray;
+
+        this.init = function() {
+
+            this.firstCircle();
+            console.log(circles);
+            console.log(this.context.canvas);
+            this.draw();
+
+        }
+
+
+        this.firstCircle = function() {
+
+            /* Create first circle outside bounds of canvas */
+
+            // Random size of radius, dx, dy
+            r = this.randBtwn(3, 5);
+            dx = this.randBtwn(-5, 5);
+            dy = this.randBtwn(-5, 5);
+
+
+            // 1. Choose random edge
+            // Create random point outside edge of canvas
+
+            //[x=0, x=canvas width, y=0, y=canvas height]
+            var edges = [-(r * 5), this.width + (r * 5), -(r * 5), this.height + (r * 5)];
+            edge = this.choose(edges); // index of edge chosen
+
+
+            // Clip potential values, ball isn't towards corners
+            clip = .8
+
+            // 2. Create x values and y values based on edge chosen
+            // If outside x range
+            if (edge == 0 || edge == 1) {
+
+                x = edges[edge];
+                y = this.randBtwn(0, this.height * clip);
+
+            } else if (edge == 2 || edge == 3) {
+
+                y = edges[edge];
+                x = this.randBtwn(0, this.width * clip);
+
+            }
+
+
+            // If x is negative
+            if (x < 0) {
+                dx = Math.abs(dx)
+            } else if (x > this.width) {
+                dx = -Math.abs(dx)
+            } else if (y < 0) {
+                dy = Math.abs(dy)
+            } else if (y > this.height) {
+                dy = -Math.abs(dy)
+            }
+
+            circles[0] = {
+                'x': x,
+                'y': y,
+                'dx': dx,
+                'dy': dy,
+                'r': r
+            }
+
+        }
+
+
+        // Create a circle that roughly reverses path of original (instead of bouncing)
+        this.spawnCircle = function(x, y, dx, dy, r) {
+            if (circles.length >= this.circlesNum) {
+                return;
+            }
+
+            range = [.75, 1.25]
+
+            // Introduce noise
+            noise = this.randBtwn(range[0], range[1]);
+            dx *= noise;
+
+            noise = this.randBtwn(range[0], range[1]);
+            dy *= noise;
+
+            // New random radius
+            r = this.randBtwn(3, 5);
+
+            // Update dx and dy
+            dx = -dx;
+            dy = -dy;
+
+            // Update x and y position
+            x += dx;
+            y += dy;
+
+            x = Math.max(r, x); // Make sure you're at least r away from the edge 
+            x = Math.min(this.width - r, x); // Make sure x is at most full width - r away from x
+
+            y = Math.max(r, y);
+            y = Math.min(this.height - r, y);
+
+
+
+            circle = {
+                'x': x,
+                'y': y,
+                'dx': dx,
+                'dy': dy,
+                'r': r
+            }
+
+            circles.push(circle);
+        }
+
+        this.draw = function() {
+
+
+            this.drawings += 1;
+            //console.log("inside draw function. # of drawings: " + this.drawings);
+            //console.log(this.context.canvas);
+
+            // Resize canvas
+
+            this.width = window.innerWidth;
+            this.height = window.innerHeight;
+
+            this.context.canvas.width = window.innerWidth;
+            this.context.canvas.height = window.innerHeight;
+
+            this.context.clearRect(0, 0, this.width, this.height);
+            this.context.beginPath();
+            this.context.fillStyle = "#333";
+
+            circlesLength = circles.length;
+
+            // Draws a circle of radius r at the coordinates x, y on the canvas
+            for (var i = 0; i < circlesLength; i++) {
+
+                this.context.arc(circles[i].x, circles[i].y, circles[i].r, 0, Math.PI * 2, true);
+                this.context.closePath();
+                this.context.fill();
+
+                // Keep moving while first circle entered canvas
+                if (!this.entered) {
+                    circles[i].x += circles[i].dx;
+                    circles[i].y += circles[i].dy;
+
+                    if (this.inBounds(circles[i].x, circles[i].y, circles[i].r)) {
+                        this.entered = 1;
+                    }
+
+                    continue;
+                }
+
+                if (circles[i].x - circles[i].r < 0 || circles[i].x + circles[i].r > this.width) {
+
+                    // Create new circle
+                    this.spawnCircle(circles[i].x, circles[i].y, circles[i].dx, circles[i].dy, circles[i].r);
+
+                    circles[i].dx = -circles[i].dx;
+
+                }
+                if (circles[i].y - circles[i].r < 0 || circles[i].y + circles[i].r > this.height) {
+
+                    // Create new circle
+                    this.spawnCircle(circles[i].x, circles[i].y, circles[i].dx, circles[i].dy, circles[i].r);
+
+                    circles[i].dy = -circles[i].dy;
+
+                }
+
+                circles[i].x += circles[i].dx;
+                circles[i].y += circles[i].dy;
+
+            }
+            window.requestAnimationFrame(this.draw.bind(this));
+        };
+
+        //window.requestAnimationFrame(this.draw);
+
+        this.inBounds = function(x, y, r) {
+            return ((x - r > 0 && x + r < this.width) && (y - r > 0 && y + r < this.height));
+        }
+
+        this.randBtwn = function(min, max) {
+            return Math.random() * (max - min) + min;
+        }
+
+        this.choose = function(choices) {
+            var index = Math.floor(Math.random() * choices.length);
+            return index;
+        }
+
+    }
+</script>
+
+</html>

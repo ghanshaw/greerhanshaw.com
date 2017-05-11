@@ -1,0 +1,219 @@
+/***
+--------------------
+Top Level Rules
+--------------------
+***/
+
+#myCanvas {
+    
+    /* Special Thanks to @_ighosh for the stellar transition */
+    /* http://uigradients.com */
+    background: #67B26F; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #67B26F , #4ca2cd); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #67B26F , #4ca2cd); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */       
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    //color: slategrey;
+    color: #3d3c42;    
+}
+
+
+/* Button Block is styled grey and white in Fluid theme */
+button.btn-block, a.btn-block {
+    //background-color: slategray;
+    background-color: #3d3c42;
+}
+
+button.btn-block, a.btn-block.js-hover {
+    color: slategray;
+}
+
+
+/***
+--------------------
+General Section Rules
+--------------------
+***/
+
+.section {
+    background-color: white;
+}
+
+/***
+--------------------
+Side Navigation
+--------------------
+***/
+
+
+nav.side-nav .cube {
+    border-color: slategray;
+    border-color: #3d3c42;
+    
+}
+
+nav.side-nav ul {
+    background-color: white;
+    //box-shadow: 5px 5px 10px #333;
+}
+
+nav.side-nav li {
+    border-color: slategray;
+    border-color: #3d3c42;
+}
+
+nav.side-nav li a {
+    color: slategray;
+    color: #3d3c42;
+}
+
+nav.side-nav li a:hover {
+    color: #aaa;
+}
+
+#theme-button-side-nav {  
+    background: slategrey;
+    background: #3d3c42;
+    
+    border: none;
+}
+
+#theme-button-side-nav:hover {
+    color: #aaa;
+}
+
+/***
+--------------------
+Pull Navigation
+--------------------
+***/
+
+
+.pull-nav-overlay {
+    background-color: white;
+}
+
+.pull-nav-menu {
+    background-color: white;   
+}
+
+.pull-nav-menu .menu-item a {
+    color: slategray;
+    //color: #3d3c42; 
+}
+
+.pull-nav .pull-nav-handle {
+    background-color: white;
+}
+
+.bar1, .bar2, .bar3, .bar4 {
+    background-color: #4ca2cd;   
+    background-color: #3d3c42;
+    background-color: slategray;
+}
+
+/***
+--------------------
+Section - Intro
+--------------------
+***/
+
+
+.section#section-intro h1 {
+    color: white;
+}
+
+.section#section-intro h3 {
+    color: white;
+}
+
+.section#section-intro .down-arrow {
+    fill: white;
+}
+
+
+/***
+--------------------
+Section - About Me
+--------------------
+***/
+
+
+
+
+/***
+--------------------
+Section - Skills
+--------------------
+***/
+
+#section-skills {
+    background-color: transparent;
+}
+
+section#section-skills h1 {
+    color: white;
+}
+
+section#section-skills h2 {
+    color: white;
+}
+
+section#section-skills h3 {
+    color: white;
+}
+
+section#section-skills h4 {
+    color: white;
+}
+
+/***
+--------------------
+Section - Portfolio
+--------------------
+***/
+
+
+.section#section-portfolio figcaption {
+    
+    /* Slate gray with reduced opacity */
+    background-color: rgba(112, 128, 144, 0.65);
+    
+}
+
+    
+/***
+--------------------
+Section - Contact
+--------------------
+***/
+
+#section-contact {
+    background-color: slategray;    
+    background-color: #3d3c42;
+}
+
+#section-contact .btn-block {
+    color: white;
+}
+
+#section-contact .btn:hover {
+    color: #3d3c42;
+}
+
+/***
+--------------------
+Footer
+--------------------
+***/
+
+footer {
+    background-color: #4a535d;     /* Pair with slate gray */
+    background-color: #323237;
+}
+
+footer h5 {
+    color: #292933;     /* Pair with slate gray */
+    color: #888888;  
+}

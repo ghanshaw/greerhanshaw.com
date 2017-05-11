@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Greer Hanshaw</title>
+	<meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport">
+	<link href="favicon.ico" rel="icon" sizes="16x16" type="image/ico"><!-- JQuery -->
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	
+    
+    <!-- Hammer JS -->
+	<script src='js/hammer.min.js'>
+	</script><!-- Google Analytics-->
+
+	<script>
+	     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+	     ga('create', 'UA-89498844-1', 'auto');
+	     ga('send', 'pageview');
+
+	</script><!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Quicksand:500,700,900" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Nunito+Sans:100,200,400,700,900" rel="stylesheet"><!-- Bootstrap -->
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+	</script><!-- Font Awesome -->
+
+	<script src="https://use.fontawesome.com/d86e92c190.js">
+	</script><!-- Bouncing Ball Script -->
+
+	<script src="js/bounce-animation.js">
+	</script><!-- Hanshaw Script and Stylesheet :) -->
+
+	<script src="js/script.js">
+	</script>
+	<link href="css/stylesheet.css" rel="stylesheet"><!-- Pull Navigation Script and Stylesheet -->
+
+	<script src="js/pull-nav.js">
+	</script>
+	<link href="css/pull-nav.css" rel="stylesheet"><!-- Fluid Theme (Optional) Stylesheet -->
+	<link href="css/fluid.css" id="stylesheet-fluid" rel="stylesheet"><!-- Mailer Script -->
+
+	<script src='js/mailer.js'>
+	</script>
+</head>
+<body>
+	<!-- 
+            /* (GH) Extra extra small devices (portrait) (phones, less than 480px) */
+            
+            /* Extra small devices (phones, less than 768px) */
+
+            /* Small devices (tablets, 768px and up) */
+
+            /* Medium devices (desktops, 992px and up) */
+
+            /* Large devices (large desktops, 1200px and up) */
+        -->
+	<div class="breakpoints">
+		<div class="small"></div>
+		<div class="medium"></div>
+		<div class="large"></div>
+	</div>
+	<canvas height="" id="myCanvas" width=""></canvas>
+	<nav class="side-nav">
+		<div class="cube"></div>
+		<ul class="">
+			<li>
+				<a href="#section-intro">Hi!</a>
+			</li>
+			<li>
+				<a href="#section-about-me">Profile</a>
+			</li>
+			<li>
+				<a href="#section-skills">Skills</a>
+			</li>
+			<li>
+				<a href="#section-portfolio">Projects</a>
+			</li>
+			<li>
+				<a href="#section-contact">Contact</a>
+			</li>
+		</ul><!-- Side Nav Theme Button -->
+		<button class="btn btn-default" id="theme-button-side-nav">Fluid</button>
+	</nav>
+	<div class="pull-nav-overlay" id="pull-nav-overlay"></div>
+	<nav class="pull-nav" id="pull-nav">
+		<div class="pull-nav-menu" id="pull-nav-menu">
+			<div class="menu">
+				<div class="menu-item">
+					<a class="pull-nav-menu-link" href="#section-intro">Hi!</a>
+				</div>
+				<div class="menu-item">
+					<a class="pull-nav-menu-link" href="#section-about-me">Profile</a>
+				</div>
+				<div class="menu-item">
+					<a class="pull-nav-menu-link" href="#section-skills">Skills</a>
+				</div>
+				<div class="menu-item">
+					<a class="pull-nav-menu-link" href="#section-portfolio">Projects</a>
+				</div>
+				<div class="menu-item">
+					<a class="pull-nav-menu-link" href="#section-contact">Contact</a>
+				</div><!-- Pull Nav Theme Button; a tag doesn't just anywhere, but does trigger pull mav close -->
+				<div class="menu-item">
+					<a class="pull-nav-menu-link" id="theme-button-pull-nav">Fluid</a>
+				</div>
+			</div>
+		</div>
+		<div class="pull-nav-handle" id="pull-nav-handle">
+			<div class="handle">
+				<div class="bar1"></div>
+				<div class="bar2"></div>
+				<div class="bar3"></div>
+				<div class="bar4"></div>
+			</div>
+		</div>
+	</nav>
+	<section class="section" id="section-intro">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-offset-3 col-md-6 content text-center">
+					<h1 class="section-heading">Hi, I'm Greer</h1>
+					<h3>Web Developer · <span style="font-size: 1.2em"><b>Python Developer</b></span> · Graphic Design Greenhorn · Retired Photographer · <span style="font-size: 1.3em"><b>Space Cadet</b></span> · Urban Tech and Clean Energy Enthusiast</h3>
+				</div>
+			</div>
+		</div><!-- Down Arrow -->
+		<div class="down-arrow-wrapper">
+			<a href="#section-about-me"><svg class="down-arrow" id="Layer_1" style="enable-background:new -41 43.6 16 15.4;" version="1.1" viewbox="-41 43.6 16 15.4" x="0px" xmlns="http://www.w3.org/2000/svg" y="0px">
+			<g id="XMLID_1_">
+				<polygon id="XMLID_31_" points="-32.9,52.5 -40.7,44.7 -40.1,43.9 -32.9,51.2 -25.8,43.9 -25.2,44.7"></polygon>
+			</g>
+			<g id="XMLID_2_">
+				<polygon id="XMLID_30_" points="-32.9,58.7 -40.7,50.9 -40.1,50.1 -32.9,57.4 -25.8,50.1 -25.2,50.9"></polygon>
+			</g></svg></a>
+		</div>
+	</section><!-- Section 2: About Me -->
+	<section class="section" id="section-about-me">
+		<div class="container-fluid">
+			<div class="row section-heading">
+				<div class="col-md-offset-2 col-md-8">
+					<h1>Profile</h1>
+				</div>
+			</div>
+			<div class="row content">
+				<div class="col-md-offset-2 col-md-8">
+					<h3 class='section-subheading'>About Me</h3>
+					<h4 style="font-weight: 100">I am a developer with experience in various capacities. I have worked in front-end technologies, but have additional experience in backend, database management, language processing, statistics, and so on. I graduated from Princeton University in 2013, and have been working with ventures in Lagos, Nigeria since then—first in retail and later in solar energy. A recent returnee, I am eager to help others solve problems while broadening my experience and expanding my skillset.</h4>
+					<h4>I love large cities, economic development and urbanization, so Lagos was the perfect place to spend 3 years. Like many cities around the world, Lagos is undergoing rapid urbanization. Issues around sustainability, energy, transportation and housing are being played out in real time. We're going to need scores of passionate technologists both here and abroad to solve these problems, and I'm looking for a niche where I can play my part.</h4>
+					<h4>Professionally, I am a results-oriented collaborator who loves finding solutions and learning new things. Let's discuss how I can help you!</h4>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12 col-sm-6 col-md-offset-3 col-md-3 text-center"><img class="profile-pic" src="images/profile_photo.jpg"></div>
+				<div class="col-xs-12 col-sm-6 col-md-6 details">
+					<div class="">
+						<h4><b>Name:</b> Greer Hanshaw</h4>
+						<h4 class="age"><b>Age:</b> 25</h4>
+						<h4><b>Location:</b> Brooklyn, New York</h4>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section><!-- Section 3: Skills -->
+	<section class="section" id="section-skills">
+		<div class="container-fluid text-center">
+			<div class="row section-heading">
+				<div class="col-md-12">
+					<h1>Skills</h1>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12">
+					<h3 class="section-subheading">Confident With</h3>
+					<h4>Python · Javscript · HTML(5) · CSS(3) · Django · JQuery · JSON · Bootstrap · Excel</h4>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12">
+					<h3 class="section-subheading">Pretty Good At</h3>
+					<h4>Photoshop · Indesign · AngularJS · VBA in Excel · Google Scripts · Liquid Scripting (Shopify) · MySQL</h4>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12">
+					<h3 class="section-subheading">Can Get Around</h3>
+					<h4>Illustrator</h4>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12">
+					<h3 class="section-subheading">Dabble In</h3>
+					<h4>Java · C/C++ · PHP</h4>
+				</div>
+			</div>
+		</div>    
+	</section>
+    
+    <!-- Section 4: Projects -->
+	<!-- Images have a 5:3 ratio -->
+	<section class="section" id="section-portfolio">
+		<div class="container-fluid">
+			<div class="row section-heading text-center">
+				<div class="col-md-12">
+					<h1>Projects</h1>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-offset-2 col-md-8">
+                    
+                    <div class="row poke-pathfinder">
+						<!-- Poke-Pathfinder Example -->
+						<div class="col-md-12">
+							<h3 class="section-subheading">AngularJS</h3>
+						</div>
+						<div class="col-sm-6 col-md-6">
+							<figure class="portfolio-fig">
+                                <div class="img-wrapper">
+								    <img class="desktop" src="images/gif_poke-pathfinder_desktop_resized.gif">
+                                    <img class="mobile" src="images/gif_poke-pathfinder_mobile_resized.gif">
+                                </div>
+								<figcaption class="visit-site">
+									<a class="btn btn-block" href="http://www.poke-pathfinder.info" role="button" target="_blank">Visit Demo</a>
+								</figcaption>
+							</figure>
+							<div>
+								<h4 class="text-center">Poke-Pathfinder</h4>
+							</div>
+						</div>
+						<div class="col-sm-6 col-md-6">
+							<div class="">
+								<h5 class="no-top-margin">Created a short game that uses pathfinding algorithms to navigate a Pokémon cave.</h5>
+								<h5>
+                                    <ul>
+                                        <li>Game built in JavaScript and AngularJS</li>
+                                        <li>Game can move sprite automatically between any two points in the cave using A*, Dijkstra's, Depth-First Search and Breadth-First Search</li>
+                                        <li>Gameboy shell is interactive—can be played on desktop and mobile</li>
+                                        <li>Users can experiment with different edge weights to change algorithms' behavior</li>
+                                        <li>Rendered with bitmap images and canvas objects</li>
+                                    </ul>
+                                </h5>
+                             </div>
+                            <div class="technologies-wrapper">
+                                <div class="technologies">
+                                    <h6><b>JavaScript</b> · <b>AngularJS</b> 1.6 · <b>Twitter Bootstrap</b> 3 · <b>jQuery</b> 2 · <b>Sass</b> 3</h6>
+                                </div>
+                            </div>
+					     </div>
+                    </div>
+                    
+					<div class="row">
+						<!-- Simulacra Example -->
+						<div class="col-md-12">
+							<h3 class="section-subheading">Django</h3>
+						</div>
+						<div class="col-sm-6 col-md-6">
+							<figure class="portfolio-fig">
+								<img src="images/gif_simulacra_resized.gif">
+								<figcaption class="visit-site">
+									<a class="btn btn-block" href="http://www.simulacra.tech" role="button" target="_blank">Visit Demo</a>
+								</figcaption>
+							</figure>
+							<div>
+								<h4 class="text-center">Simulacra (Game of Life Implementation)</h4>
+							</div>
+						</div>
+						<div class="col-sm-6 col-md-6">
+							<div class="">
+								<h5 class="no-top-margin">Implementated Conway's Game of Life using Django Channels.</h5>
+								<h5>
+                                    <ul>
+                                        <li>Python handles logic of simualtion on server side</li>
+                                        <li>Sends updates to the client via WebSockets</li>
+                                        <li>Dynamic D3.js chart depicts population of universe across different iterations of the simulation</li>
+                                        <li>Timeline allows user to explore simulation at different periods</li>
+                                        <li>User can drag and drop patterns or draw directly onto canvas</li>
+                                    </ul>
+                                </h5>
+                             </div>
+                            <div class="technologies-wrapper">
+                                <div class="technologies">
+                                    <h6><b>Python</b> 3.6 · <b>Django</b> 1.10 · <b>Django Channels</b> 1.0.2 · <b>D3</b> 4.0 · <b>Twitter Bootstrap</b> 3 · <b>jQuery</b> 2</h6>
+                                </div>
+                            </div>
+					     </div>
+                    </div>
+                    
+					<div class="row shopify">
+						<!-- SLKT Example -->
+						<div class="col-sm-12">
+							<h3 class="section-subheading">Shopify</h3>
+						</div>
+						<div class="col-sm-6 col-md-6">
+							<figure class="portfolio-fig">
+								<img src="images/gif_slkt_resized.gif">
+								<figcaption class="visit-site">
+									<a class="btn btn-block" href="https://www.slktonline.com" role="button" target="_blank">Visit Site</a>
+								</figcaption>
+							</figure>
+							<div>
+								<h4 class="text-center">SLKT Online</h4>
+							</div>
+							<div class="">
+								<h5>Designed and built website for online thrift store based in Lagos.</h5>
+								<h5>
+                                    <ul>
+                                        <li>Fully responsive</li>
+                                        <li>Custom loading design during page transitions</li>
+                                        <li>Overlays allow user to stylishly search or join mailing list from anywhere in site</li>
+                                        <li>Dynamic page lists links of all available brands. Auto-updates via Liquid script that scans in-stock inventory</li>
+                                    </ul>
+                                </h5>
+							</div>
+                            <div class="technologies-wrapper">
+                                <div class="technologies">
+                                    <h6><b>Shopify</b> · <b>jQuery</b> 2 · <b>Photoshop</b> · <b>Illustrator</b></h6>
+                                </div>
+                            </div>
+						</div>
+                        
+                        <!-- Add extra space on small devices -->
+                        <div class="col-xs-12 hidden-sm hidden-md hidden-lg">
+                            <br>
+                            <br>
+                        </div>
+                        <!-- Eve & Tribe Example -->
+						<div class="col-xs-12 col-sm-6 col-md-6">
+							<figure class="portfolio-fig">
+								<img src="images/gif_eandt_resized.gif">
+								<figcaption class="visit-site">
+									<a class="btn btn-block" href="https://www.eveandtribe.com" role="button" target="_blank">Visit Site</a>
+								</figcaption>
+							</figure>
+							<div>
+								<h4 class="text-center">Eve & Tribe</h4>
+							</div>
+							<div class="">
+								<h5>Designed and built website for first fast-fashion brand in Lagos.</h5>
+								<h5>
+                                    <ul>
+                                        <li>Fully responsive</li>
+                                        <li>Custom HTML Emails</li>
+                                        <li>Created custom dashboard using API, SQL and Google Sheets</li>
+                                    </ul>
+                                </h5>
+							</div>
+				            <div class="technologies-wrapper">
+                                <div class="technologies">
+                                    <h6><b>Shopify (API)</b> · <b>Google Scripts</b> · <b>MySQL</b> · <b>Illustrator</b> · <b>Photoshop</b></h6>
+                                </div>
+                            </div>
+                        </div>
+					</div>
+                    
+					<div class="row">
+						<!-- Wordpress/No CMS Examples-->
+						<div class="col-sm-6">
+							<h3 class="section-subheading">Wordpress</h3>
+							<figure class="portfolio-fig">
+								<img src="images/screenshot_dc_solar_resized.jpg">
+								<figcaption class="visit-site">
+									<a class="btn btn-block" href="http://www.dcsolarpower.com" role="button" target="_blank">Visit Site</a>
+								</figcaption>
+							</figure>
+						</div>
+                        
+                        <!-- No CMS Examples -->
+						<div class="col-sm-6">
+							<h3 class="section-subheading">No CMS</h3>
+							<figure class="portfolio-fig">
+								<img src="images/screenshot_drivemoto_resized.jpg">
+								<figcaption class="visit-site">
+									<a class="btn btn-block" href="http://www.drivemoto.com" role="button" target="_blank">Visit Site</a>
+								</figcaption>
+							</figure>
+						</div>
+					</div>
+                    
+				</div>
+			</div>
+		</div>
+	</section>
+    
+    <!-- Section 5: Contact -->
+	<section class="section" id="section-contact">
+		<div class="container-fluid">
+			<div class="row section-heading text-center">
+				<div class="col-md-12">
+					<h1>Say Hi!</h1>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-offset-2 col-md-8">
+					<div class="col-md-5">
+						<h3>I'd love to hear from you!</h3>
+						<h4>Thanks for taking an interest in my work. If you have a project in mind, then you've come to the right place. Feel free to complete the form, or contact me via email or LinkedIn.</h4>
+						<div class="row contact-buttons">
+                            <div class="col-md-4">
+								<a class="btn btn-block" href="https://github.com/ghanshaw" role="button" target="_blank">
+                                <i class="fa fa-github-alt" aria-hidden="true"></i></a>
+							</div>
+							<div class="col-md-4">
+								<a class="btn btn-block" href="https://www.linkedin.com/in/greer-hanshaw-28834115" role="button" target="_blank"><i aria-hidden="true" class="fa fa-linkedin"></i></a>
+							</div>
+							<div class="col-md-4">
+								<a class="btn btn-block" href="mailto:greer.hanshaw@gmail.com" role="button" target="_self">
+                                <i aria-hidden="true" class="fa fa-envelope-o"></i></a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-offset-1 col-md-6 contact">
+						<div class="" id="form-response"></div>
+						<form action="php/mailer.php" enctype="text/plain" id="ajax-contact" method="post" name="ajax-contact">
+							<div class="form-group">
+								<label for="name">Your Name (required)</label> <input class="form-control" id="name" name="name" required="" type="text">
+							</div>
+							<div class="form-group">
+								<label for="email">Your Email (required)</label> <input class="form-control" id="email" name="email" required="" type="email">
+							</div>
+							<div class="form-group">
+								<label for="message">Your Message</label> 
+								<textarea class="form-control" id="message" name="message" rows="7"></textarea>
+							</div><button class="btn btn-block" type="submit">Send</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section><!-- Footer -->
+	<footer>
+		<div class="container">
+			<div class="row text-center">
+				<div class="col-md-12">
+					<h5>Designed and Developed by Greer Hanshaw</h5>
+					<h5>© Copyright 2016 Greer Hanshaw</h5>
+				</div>
+			</div>
+		</div>
+	</footer>
+</body>
+</html>
