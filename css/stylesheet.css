@@ -441,7 +441,7 @@ Section - Portfolio ==> Poke-Pathfinder
     position: relative;
     z-index: 20;
 
-    animation: fade-in-out 4s linear 0s infinite alternate;
+    animation: fade-in-out 12s linear 0s infinite normal;
 }
 
 .row.poke-pathfinder div.img-wrapper img.mobile {
@@ -449,6 +449,7 @@ Section - Portfolio ==> Poke-Pathfinder
     z-index: 10;
     position: absolute;
     top: 0;
+    left: 0;
     box-shadow: none !important;
 }
 
@@ -456,7 +457,8 @@ Section - Portfolio ==> Poke-Pathfinder
     0% { opacity: 1; }
     25% { opacity: 1; }
     50% { opacity: 0; }
-    100% { opacity: 0; }
+    75% { opacity: 0; }
+    100% { opacity: 1; }
 }
 
     
